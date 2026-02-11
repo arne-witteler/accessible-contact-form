@@ -6,66 +6,74 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
     <title>Frontend Mentor | Contact form</title>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <main class="contact">
-      <form class="contact__form" id="contact-form">
+      <form class="contact__form" id="contact-form" novalidate>
 
         <h1 class="contact__title">Contact Us</h1>
 
         <div class="contact__name-group">
           <div class="contact__first-name">
             <label class="contact__label" for="first-name">First Name <span class="contact__required"> *</span></label>
-            <input class="contact__input" type="text" id="first-name" name="first-name">
-            <span class="contact__error" id="first-name-error">This field is required</span>
+            <input class="contact__input" type="text" id="first-name" name="first-name" aria-describedby="first-name-error" required>
+            <span class="contact__error" id="first-name-error" aria-hidden="true">This field is required</span>
           </div>
           <div class="contact__last-name">
             <label class="contact__label" for="last-name">Last Name <span class="contact__required"> *</span></label>
-            <input class="contact__input" type="text" id="last-name" name="last-name">
-            <span class="contact__error" id="last-name-error">This field is required</span>
+            <input class="contact__input" type="text" id="last-name" name="last-name" aria-describedby="last-name-error" required>
+            <span class="contact__error" id="last-name-error" aria-hidden="true">This field is required</span>
           </div>
         </div>
 
         <div class="contact__email">
           <label class="contact__label" for="email">Email Address <span class="contact__required"> *</span></label>
-          <input class="contact__input" type="email" id="email" name="email">
-          <span class="contact__error" id="email-error">Please enter a valid email address</span>
+          <input class="contact__input" type="email" id="email" name="email" aria-describedby="email-error" required>
+          <span class="contact__error" id="email-error" aria-hidden="true">Please enter a valid email address</span>
         </div>
 
         <div class="contact__query">
-          <fieldset class="contact__fieldset">
+          <fieldset class="contact__fieldset" aria-describedby="query-type-error">
             <legend class="contact__legend">Query Type <span class="contact__required"> *</span></legend>
-
-            <label class="contact__radio-label">
-              <input class="contact__radio" type="radio" name="query-type">General Enquiry
+            <div class="contact__radio-group">
+              <label class="contact__radio-label">
+                <input class="contact__radio" type="radio" name="query-type" value="general" required>General Enquiry
           </label>
 
-            <label class="contact__radio-label">
-              <input class="contact__radio" type="radio" name="query-type">Support Request
+              <label class="contact__radio-label">
+                <input class="contact__radio" type="radio" name="query-type" value="support" required>Support Request
           </label>
-            <span class="contact__error" id="query-type-error">Please select a query type</span>
+            </div>
+            <span class="contact__error" id="query-type-error" aria-hidden="true">Please select a query type</span>
           </fieldset>
         </div>
 
         <div class="contact__message">
           <label class="contact__label" for="message">Message <span class="contact__required"> *</span></label>
-          <textarea class="contact__textarea" id="message" name="message"></textarea>
-          <span class="contact__error" id="message-error">This field is required</span>
+          <textarea class="contact__textarea" id="message" name="message" aria-describedby="message-error" required></textarea>
+          <span class="contact__error" id="message-error" aria-hidden="true">This field is required</span>
         </div>
 
         <div class="contact__consent">
-          <input class="contact__checkbox" type="checkbox" id="consent" name="consent">
-          <label class="contact__label--consent" for="consent">I consent to being contacted by the team <span class="contact__required"> *</span></label>
-          <span class="contact__error" id="consent-error">To submit this form, please consent to being contacted</span>
+          <div class="contact__consent-row">
+            <input class="contact__checkbox" type="checkbox" id="consent" name="consent" aria-describedby="consent-error" required>
+            <label class="contact__label--consent" for="consent">I consent to being contacted by the team <span class="contact__required"> *</span></label>
+          </div>
+          <span class="contact__error" id="consent-error" aria-hidden="true">To submit this form, please consent to being contacted</span>
         </div>
 
         <button class="contact__button" type="submit">Submit</button>
 
-        <div class="contact__success" id="success-message">
-          <h2 class="contact__success-title">Message Sent!</h2>
-          <p class="contact__success-text">Thanks for completing the form. We'll be in touch soon!</p>
-        </div>
       </form>
+
+      <div class="contact__success" id="success-message">
+        <div class="contact__success-header">
+          <img class="contact__success-icon" src="./assets/images/icon-success-check.svg" alt="Success icon">
+          <h2 class="contact__success-title">Message Sent!</h2>
+        </div>
+        <p class="contact__success-text">Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
 
       <div class="attribution">
         <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. Coded by <a href="https://github.com/arne-witteler">Arne Witteler</a>.</p>
