@@ -56,7 +56,11 @@ form.addEventListener('submit', (event) => {
     }
 
     if (!hasErrors) {
-      sucessMessage.style.display = "flex";
+      sucessMessage.classList.add("contact__success--visible");
+      
+      setTimeout(() => {
+        sucessMessage.classList.remove("contact__success--visible");
+      }, 5000);
       form.reset();
-    }
-});
+    } 
+  });
