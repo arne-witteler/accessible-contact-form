@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor solution](https://your-solution-url.com)
-- Live Site URL: [Live demo](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor solution](https://github.com/arne-witteler/accessible-contact-form)
+- Live Site URL: [Live demo](https://accessible-contact-form-three.vercel.app)
 
 ## My process
 
